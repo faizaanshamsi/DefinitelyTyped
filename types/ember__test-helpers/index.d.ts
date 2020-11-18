@@ -24,6 +24,7 @@ declare module '@ember/test-helpers' {
     export { default as triggerKeyEvent } from '@ember/test-helpers/dom/trigger-key-event';
     export { default as fillIn } from '@ember/test-helpers/dom/fill-in';
     export { default as typeIn } from '@ember/test-helpers/dom/type-in';
+    export { default as select } from '@ember/test-helpers/dom/select';
 
     // DOM Query Helpers
 
@@ -161,6 +162,12 @@ declare module '@ember/test-helpers/dom/wait-for' {
     }
 
     export default function(selector: string, options?: Options): Promise<Element | Element[]>;
+}
+
+declare module '@ember/test-helpers/dom/select' {
+    import { Target } from '@ember/test-helpers';
+ 
+    export default function(target: Target, options: string | string[], keepPreviouslySelected?: boolean): Promise<void>;
 }
 
 declare module '@ember/test-helpers/wait-until' {
